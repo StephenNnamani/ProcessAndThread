@@ -14,13 +14,11 @@ namespace ProcessAndThread.ListDisplays
         {
             starLines.LinesWithWords(" Stephen's Task Manager ");
             Process[] processCollection = Process.GetProcesses();
-            Console.WriteLine("\nPROCESS NAME \t\t\tBASE PRIORITY \t\tPROCESS ID");
+            Console.WriteLine("\nPROCESS NAME \t\t\tBASE PRIORITY \t\tPROCESS ID\tPrivate Memory Size");
             foreach (var p in processCollection)
             {
-                starLines.Yellow();
-                Console.WriteLine($">>> {p.ProcessName} \t\t\t{p.BasePriority} \t\t\t{p.Id}");
+                starLines.Yellow($">>> {p.ProcessName} \t\t\t{p.BasePriority} \t\t\t{p.Id}\t\t{p.PrivateMemorySize}");
             }
-            starLines.DefaultColor();
             starLines.Lines();
         }
     }

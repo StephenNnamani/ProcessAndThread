@@ -8,6 +8,7 @@ namespace ProcessAndThread
         {
             //ListProcesses.ListOfProcesses();
             //ThreadAliveOrBackground.ThreadStatus();
+            ThreadAliveOrBackground.CheckThread();
         }
     }
 }

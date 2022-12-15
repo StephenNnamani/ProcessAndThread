@@ -16,13 +16,26 @@ namespace ProcessAndThread.Utility
         {
             Console.WriteLine("***************************************************************");
         }
-        public static void Yellow()
+        public static void Yellow(object input)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-        }
-        public static void DefaultColor()
-        {
+            Console.WriteLine(input);
             Console.ResetColor();
+        }
+        
+        public static void CautionColor(object input)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(input);
+            Console.ResetColor();
+
+        }
+        public static void WarmReminderColor(object input)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(input);
+            Console.ResetColor();
+
         }
     }
 }
