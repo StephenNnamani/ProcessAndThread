@@ -27,7 +27,7 @@ namespace ProcessAndThread.ListDisplays
         {
             Process process = Process.GetCurrentProcess();
             ProcessThreadCollection threadCollection = process.Threads;
-            ArrayList threadArray = new();
+
         restart:
             Console.Clear();
             foreach (ProcessThread i in threadCollection)
@@ -39,7 +39,6 @@ namespace ProcessAndThread.ListDisplays
 
             int input = 0;
             int quit = 0;
-            string repeat = "N";
             while (input == 0 || quit == 3)
             {
                 Console.Write("Kindly type in here the ID of the thread (numbers only): ");
@@ -64,10 +63,11 @@ namespace ProcessAndThread.ListDisplays
             bool found = false;
             foreach(ProcessThread thread in threadCollection)
             {
+                Thread threaded = Thread.CurrentThread;
                 if(input == thread.Id)
                 {
                     starLines.Lines();
-                    starLines.Yellow($"\nThe Thread {thread.Id} is currntly: \t\n{thread.ThreadState}");
+                    starLines.Yellow($"\nThe Thread {thread.Id} is currntly: \nIsAlive\n{thread}\nIsBackground\n{threaded.IsBackground}");
                     starLines.Lines();
                     found = true;
                 }
@@ -78,7 +78,7 @@ namespace ProcessAndThread.ListDisplays
                 Console.ReadKey();
                 goto restart;
             }
-                
+            
             
                 
             
